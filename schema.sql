@@ -23,3 +23,18 @@ create table financas (
     mes_referencia integer references meses(id),
     ano_referencia integer not null,
 );
+
+insert into meses (nome)
+values
+('Janeiro'),
+('Fevereiro'),
+('Março'),
+('Abril'),
+('Maio'),
+('Junho'),
+('Julho'),
+('Agosto'),
+('Setembro'),
+('Outubro'),
+('Novembro'),
+('Dezembro');
