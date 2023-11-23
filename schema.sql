@@ -19,6 +19,7 @@ create table financas (
     tipo text not null,
     descricao text not null,
     valor integer not null,
+    parcelas integer,
     usuario_id integer references usuarios(id),
     mes_referencia integer references meses(id),
     ano_referencia integer not null,

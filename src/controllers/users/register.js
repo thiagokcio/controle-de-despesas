@@ -17,17 +17,14 @@ const registerUser = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(senha, 10);
 
-        const insertUser = await knex("usuarios")
+        await knex("usuarios")
             .insert({
                 nome,
                 email,
                 senha: hashedPassword,
-            })
-            .returning("*");
+            });
 
-        const { senha: _, ...user } = insertUser[0]
-
-        return res.status(201).json(user)
+        return res.status(201).json('Usuário cadastrado com sucesso.')
     } catch (error) {
         return res.status(500).json('Erro no servidor.')
     }

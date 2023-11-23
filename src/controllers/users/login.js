@@ -30,12 +30,7 @@ const loginUser = async (req, res) => {
             {expiresIn: "1h"}
         );
 
-        const { senha: _, ...userData } = userFound;
-
-        return res.status(200).json({
-            usuario: userData,
-            token
-        });
+        return res.status(200).json({ token });
         
     } catch (error) {
         return res.status(500).json("Erro no servidor.");
